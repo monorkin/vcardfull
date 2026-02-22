@@ -1,0 +1,26 @@
+PATH
+  remote: .
+  specs:
+    vcardfull (0.1.0)
+      base64
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.3.0)
+    minitest (6.0.1)
+      prism (~> 1.5)
+    prism (1.9.0)
+    rake (13.3.1)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  minitest
+  rake
+  vcardfull!
+
+BUNDLED WITH
+   2.6.9
