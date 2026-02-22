@@ -115,6 +115,35 @@ Each collection item is a Struct with typed fields:
 
 The `label` field contains the first TYPE parameter value (e.g. `"home"`, `"work"`, `"cell"`). The `pref` field contains the integer preference order when specified. The `position` field preserves the original ordering of properties within each group.
 
+### Custom handlers
+
+The parser uses a SAX-style handler to process property events. You can replace the built-in handler with your own to customize how properties are collected. A handler must implement two methods:
+
+- `on_property(name, params, value, type:, pref:)` — called for each vCard property
+- `result` — called after parsing completes, returns whatever you need
+
+For example, to extract only email addresses:
+
+```ruby
+class EmailCollector
+  attr_reader :result
+
+  def initialize
+    @result = []
+  end
+
+  def on_property(name, params, value, type:, pref:)
+    if name.upcase == "EMAIL"
+      @result << value
+    end
+  end
+end
+
+handler = EmailCollector.new
+emails = Vcardfull::Parser.parse(vcf_string, handler: handler)
+# => ["alice@example.com", "alice@work.com"]
+```
+
 ## Version support
 
 VCardfull handles the differences between vCard versions transparently:
