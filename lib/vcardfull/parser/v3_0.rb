@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-# Documentation: https://datatracker.ietf.org/doc/html/rfc2426
 module Vcardfull
   class Parser
     # vCard 3.0 (RFC 2426) parser.
+    # Documentation: https://datatracker.ietf.org/doc/html/rfc2426
     #
     # Overrides parameter parsing to handle the PREF keyword as a TYPE component
     # and to extract preference values from TYPE parameters.

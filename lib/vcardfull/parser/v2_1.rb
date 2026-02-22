@@ -2,10 +2,10 @@
 
 require "base64"
 
-# Documentation: https://web.archive.org/web/20120104222727/http://www.imc.org/pdi/vcard-21.txt
 module Vcardfull
   class Parser
     # vCard 2.1 parser.
+    # Documentation: https://web.archive.org/web/20120104222727/http://www.imc.org/pdi/vcard-21.txt
     #
     # Extends V30 with quoted-printable awareness and decoding support for
     # QUOTED-PRINTABLE and BASE64 encoded values. Removes encoding parameters
