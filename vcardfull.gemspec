@@ -5,9 +5,13 @@ Gem::Specification.new do |spec|
   spec.version = "0.1.0"
   spec.authors = [ "Stanko K.R." ]
   spec.summary = "A vCard parser and serializer supporting versions 2.1, 3.0, and 4.0"
+  spec.homepage = "https://github.com/monorkin/vcardfull"
   spec.license = "MIT"
 
   spec.required_ruby_version = ">= 3.1"
+
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = "https://github.com/monorkin/vcardfull"
 
   spec.files = Dir["lib/**/*.rb"]
   spec.require_paths = [ "lib" ]
